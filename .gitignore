@@ -1,6 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
-<<<<<<< HEAD
 addons/godot-git-plugin/*
 
 # Godot-specific ignores
@@ -15,11 +14,7 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
-=======
 /android/
-<<<<<<< HEAD
->>>>>>> 8c986a3 (initial commit)
-=======
 addons/godot-git-plugin/win64/libgit_plugin.windows.editor.x86_64.lib
 addons/godot-git-plugin/win64/libgit_plugin.windows.editor.x86_64.exp
 addons/godot-git-plugin/win64/libgit_plugin.windows.editor.x86_64.dll
@@ -29,4 +24,3 @@ addons/godot-git-plugin/THIRDPARTY.md
 addons/godot-git-plugin/plugin.cfg
 addons/godot-git-plugin/LICENSE
 addons/godot-git-plugin/git_plugin.gdextension
->>>>>>> 3b91006 (updated git ignore file)
