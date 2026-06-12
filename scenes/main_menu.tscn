@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dbhyclvxf8luv"]
+
+[ext_resource type="Texture2D" uid="uid://ctt5ew0m6qbnc" path="res://assests/background.jpg" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://d0p1312bap1ds" path="res://scripts/main_menu.gd" id="1_oa1go"]
+[ext_resource type="FontFile" uid="uid://dht2yjedjqck8" path="res://assests/Font-Martius-LV9L4.ttf" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c0q5ski7y8qya" path="res://assests/title.png" id="3_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://cqmy0wew0xygj" path="res://audio/click_ui.mp3" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://b0o8ick5npilx" path="res://assests/author.png" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://c08a5nv7taqln" path="res://audio/The Palace Gardens - Asher Fulero.ogg" id="7_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://bmbtv3gbbmeq0" path="res://assests/close_button.png" id="8_tbmy8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.20392157, 0.20392157, 0.20392157, 0.78431374)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.9882353, 0.9882353, 1, 0.99607843)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0.7764706, 0.7764706, 0.7764706, 0.9411765)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+corner_detail = 12
+
+[node name="MainMenu" type="Node2D" unique_id=547202474]
+script = ExtResource("1_oa1go")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2025089218]
+position = Vector2(360, 360)
+texture = ExtResource("1_ekxnf")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1688599416]
+position = Vector2(360, 180)
+scale = Vector2(0.77999985, 0.7799999)
+texture = ExtResource("3_bqqt6")
+
+[node name="Author" type="Sprite2D" parent="." unique_id=1357809816]
+position = Vector2(624, 657)
+scale = Vector2(0.49609357, 0.49609357)
+texture = ExtResource("6_rtw2f")
+
+[node name="Play" type="Button" parent="." unique_id=1711721798]
+offset_left = 240.0
+offset_top = 400.0
+offset_right = 480.0
+offset_bottom = 484.0
+pivot_offset = Vector2(120, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 68
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+text = "Play"
+
+[node name="HowTo" type="Button" parent="." unique_id=1847638181]
+offset_left = 240.0
+offset_top = 508.0
+offset_right = 480.0
+offset_bottom = 592.0
+pivot_offset = Vector2(120, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 68
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+text = "How to"
+
+[node name="ClickUI" type="AudioStreamPlayer" parent="." unique_id=1899856392]
+stream = ExtResource("4_wu84c")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=2061236925]
+stream = ExtResource("7_tbmy8")
+volume_db = -8.0
+autoplay = true
+parameters/looping = true
+
+[node name="HowToWindow" type="ColorRect" parent="." unique_id=1340807614]
+visible = false
+offset_left = 87.0
+offset_top = 90.0
+offset_right = 633.0
+offset_bottom = 625.0
+color = Color(0.047058824, 0.047058824, 0.047058824, 0.9882353)
+
+[node name="HowToTitle" type="RichTextLabel" parent="HowToWindow" unique_id=1766096441]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 14.0
+offset_right = 398.0
+offset_bottom = 85.0
+theme_override_fonts/normal_font = ExtResource("2_bqqt6")
+theme_override_font_sizes/normal_font_size = 58
+bbcode_enabled = true
+text = "[u]How to play[/u]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowToDescription" type="RichTextLabel" parent="HowToWindow" unique_id=1624104607]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 523.0
+offset_bottom = 535.0
+theme_override_colors/default_color = Color(0.86203486, 0.8620336, 0.8620339, 1)
+theme_override_fonts/normal_font = ExtResource("2_bqqt6")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "[ul]
+[color=gold]Fill a 9×9 grid using numbers from 1 to 9[/color]
+In each [color=cyan]row[/color], each number from 1-9 can appear only once
+In each [color=violet]column[/color], each number from 1-9 can appear only once
+There are 3×3 [color=green_yellow]sub-grids[/color](marked with a thicker border); each sub-grid has numbers from 1-9 that can appear only once
+[/ul]"
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="HowToWindow" unique_id=453880989]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 14.0
+offset_right = 633.0
+offset_bottom = 150.0
+scale = Vector2(0.26, 0.26)
+tooltip_text = "Close window"
+theme_override_styles/normal = SubResource("StyleBoxFlat_jk1qb")
+icon = ExtResource("8_tbmy8")
+icon_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HowTo" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="HowToWindow/Close" to="." method="_on_close_pressed"]

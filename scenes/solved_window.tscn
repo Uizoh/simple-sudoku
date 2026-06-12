@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://batf6bs7icn58"]
+
+[ext_resource type="Script" uid="uid://c0hnqii02t32h" path="res://scripts/solved_window.gd" id="1_ws7kr"]
+[ext_resource type="FontFile" uid="uid://dht2yjedjqck8" path="res://assests/Font-Martius-LV9L4.ttf" id="2_ulfxi"]
+[ext_resource type="Texture2D" uid="uid://bmbtv3gbbmeq0" path="res://assests/close_button.png" id="3_uidoc"]
+[ext_resource type="AudioStream" uid="uid://cgugme5iv1nre" path="res://audio/completed.ogg" id="4_ulfxi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd5u8"]
+bg_color = Color(0.7764706, 0.7764706, 0.7764706, 0.9411765)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+corner_detail = 12
+
+[node name="SolvedWindow" type="Polygon2D" unique_id=71223153]
+z_index = 10
+position = Vector2(204, 348)
+color = Color(0.07058824, 0.07058824, 0.07058824, 0.9647059)
+polygon = PackedVector2Array(-192, -48, 504, -48, 504, 80, -192, 88)
+uv = PackedVector2Array(-138.5625, -31.578125, 211.59375, -31.285156, 212.15234, 72.33594, -132.3711, 72.09766)
+script = ExtResource("1_ws7kr")
+
+[node name="Solved" type="RichTextLabel" parent="." unique_id=2023658844]
+offset_left = -25.0
+offset_top = -37.0
+offset_right = 335.0
+offset_bottom = 14.0
+theme_override_fonts/normal_font = ExtResource("2_ulfxi")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=royal_blue]Sudoku solved![/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MistakesMade" type="RichTextLabel" parent="." unique_id=1383087223]
+offset_left = 168.0
+offset_top = 32.0
+offset_right = 500.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("2_ulfxi")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "Mistakes: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeTaken" type="RichTextLabel" parent="." unique_id=508503992]
+offset_left = -189.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("2_ulfxi")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "Time: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="." unique_id=223668081]
+offset_left = 457.0
+offset_top = -37.0
+offset_right = 593.0
+offset_bottom = 99.0
+scale = Vector2(0.26, 0.26)
+tooltip_text = "Close window"
+theme_override_styles/normal = SubResource("StyleBoxFlat_wd5u8")
+icon = ExtResource("3_uidoc")
+icon_alignment = 1
+
+[node name="SolvedAudioEffect" type="AudioStreamPlayer" parent="." unique_id=227341371]
+stream = ExtResource("4_ulfxi")
+volume_db = 12.0
+autoplay = true
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

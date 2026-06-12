@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dteuw2j4caric"]
+
+[ext_resource type="FontFile" uid="uid://dht2yjedjqck8" path="res://assests/Font-Martius-LV9L4.ttf" id="1_upbjj"]
+[ext_resource type="Script" uid="uid://dthgbwd1yydhg" path="res://scripts/cell.gd" id="2_0s7o3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s7o3"]
+content_margin_left = 8.0
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 0.42352942)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm02e"]
+content_margin_left = 16.0
+bg_color = Color(0.11000819, 0.1100082, 0.11000811, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.9641244, 0.9641244, 0.9641244, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upbjj"]
+content_margin_left = 8.0
+bg_color = Color(0.34509805, 0.34509805, 0.34509805, 0.6745098)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds1sf"]
+content_margin_left = 8.0
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 0.42352942)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 6
+
+[node name="Cell" type="Button" unique_id=393188543]
+z_index = -10
+custom_minimum_size = Vector2(64, 64)
+offset_right = 58.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.95091206, 0.95091206, 0.95091194, 1)
+theme_override_fonts/font = ExtResource("1_upbjj")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_0s7o3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nm02e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_upbjj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ds1sf")
+toggle_mode = true
+button_mask = 3
+text = "0"
+script = ExtResource("2_0s7o3")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

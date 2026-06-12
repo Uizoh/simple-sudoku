@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://y6eaux4rukk5"]
+
+[ext_resource type="Script" uid="uid://cpwcdkxvvodb8" path="res://scripts/game.gd" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://d33o214vpbb1w" path="res://addons/grid_display/grid_display.gd" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://ctt5ew0m6qbnc" path="res://assests/background.jpg" id="1_yqjtg"]
+[ext_resource type="AudioStream" uid="uid://cqmy0wew0xygj" path="res://audio/click_ui.mp3" id="2_gee14"]
+[ext_resource type="AudioStream" uid="uid://cetsish763u3v" path="res://audio/click_cell.mp3" id="3_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://ccvo4wt8dix4o" path="res://assests/refresh_button.png" id="4_iywne"]
+[ext_resource type="Script" uid="uid://c4cuvhwb24603" path="res://scripts/choice_grid.gd" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dd0hknfgnsna1" path="res://assests/back_button.png" id="5_p57ef"]
+[ext_resource type="AudioStream" uid="uid://hfcu3i7cedyg" path="res://audio/Pulsar - The Grey Room _ Density & Time.ogg" id="7_0tnpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
+bg_color = Color(0.7764706, 0.7764706, 0.7764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+corner_detail = 12
+
+[node name="Game" type="Node2D" unique_id=1292179542]
+script = ExtResource("1_lnu2h")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=408788463]
+z_index = -12
+position = Vector2(360, 360)
+texture = ExtResource("1_yqjtg")
+
+[node name="Grid9x9" type="Node2D" parent="." unique_id=1729910630]
+position = Vector2(54.968, 16)
+scale = Vector2(1.06, 1.06)
+script = ExtResource("1_uwrxv")
+grid_size = Vector2(9, 9)
+line_size = Vector2(2, 2)
+border_width = 2.0
+border_color = Color(0.627451, 0.627451, 0.627451, 1)
+vline_color = Color(0.627451, 0.627451, 0.627451, 1)
+hline_color = Color(0.627451, 0.627451, 0.627451, 1)
+metadata/_custom_type_script = "uid://d33o214vpbb1w"
+
+[node name="Grid3x3" type="Node2D" parent="Grid9x9" unique_id=779267863]
+scale = Vector2(3, 3)
+script = ExtResource("1_uwrxv")
+grid_size = Vector2(3, 3)
+line_size = Vector2(2, 2)
+border_width = 2.0
+border_color = Color(0.627451, 0.627451, 0.627451, 1)
+vline_color = Color(0.627451, 0.627451, 0.627451, 1)
+hline_color = Color(0.627451, 0.627451, 0.627451, 1)
+metadata/_custom_type_script = "uid://d33o214vpbb1w"
+
+[node name="Refresh" type="Button" parent="Grid9x9" unique_id=904131901]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 584.936
+offset_top = 30.0
+offset_right = 720.936
+offset_bottom = 166.0
+scale = Vector2(0.26, 0.26)
+tooltip_text = "Start new game"
+theme_override_styles/normal = SubResource("StyleBoxFlat_p57ef")
+icon = ExtResource("4_iywne")
+icon_alignment = 1
+
+[node name="Back" type="Button" parent="Grid9x9" unique_id=349945865]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 584.936
+offset_top = 76.0
+offset_right = 720.936
+offset_bottom = 212.0
+scale = Vector2(0.26, 0.26)
+tooltip_text = "Go to main menu"
+theme_override_styles/normal = SubResource("StyleBoxFlat_p57ef")
+icon = ExtResource("5_p57ef")
+icon_alignment = 1
+
+[node name="ChoiceGrid" type="Node2D" parent="." unique_id=421545097]
+visible = false
+position = Vector2(54.968, 642)
+scale = Vector2(1.06, 1.06)
+script = ExtResource("4_lbhrr")
+grid_size = Vector2(9, 1)
+line_size = Vector2(4, 4)
+border_width = 4.0
+border_color = Color(0.627451, 0.627451, 0.627451, 1)
+vline_color = Color(0.627451, 0.627451, 0.627451, 1)
+hline_color = Color(0.627451, 0.627451, 0.627451, 1)
+metadata/_custom_type_script = "uid://d33o214vpbb1w"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=2028124360]
+stream = ExtResource("7_0tnpc")
+volume_db = -6.0
+autoplay = true
+parameters/looping = true
+
+[node name="ClickUI" type="AudioStreamPlayer" parent="." unique_id=882353199]
+stream = ExtResource("2_gee14")
+
+[node name="ClickCell" type="AudioStreamPlayer" parent="." unique_id=1600063558]
+stream = ExtResource("3_0tnpc")
+
+[connection signal="pressed" from="Grid9x9/Refresh" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="Grid9x9/Back" to="." method="_on_back_pressed"]
+[connection signal="sudoku_solved" from="ChoiceGrid" to="." method="_on_sudoku_solved"]
